@@ -1,4 +1,5 @@
 #https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/
+#Jason Brownlee PhD
 # Backprop on the Seeds Dataset
 from random import seed
 from random import randrange
