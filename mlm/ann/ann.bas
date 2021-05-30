@@ -13,7 +13,6 @@ Dim lsT As Integer
 Dim kA As Integer
 
 Sub backPropagate()
-
 Application.ScreenUpdating = False
 
 '// without adam optimizer
@@ -38,7 +37,6 @@ Application.ScreenUpdating = False
     Call cpyPstData(Range("wf_O3wA"), Range("wo_3o"))
     
 Application.ScreenUpdating = True
-
 End Sub
 
 Sub run()
@@ -62,7 +60,6 @@ End If
     Next
     
 Application.ScreenUpdating = True
-
 End Sub
 
 Sub transposeData(rowToCopy As Range, pasteTarget As Range)
@@ -87,7 +84,7 @@ j = wsTRNdata.Range("O2")
         '// transfer derivative
         Call transferDrv
     Next
-    
+'//K-Fold Cross Validation   
 Select Case lsT
     Case Is = 22
         wsTRNdata.Range("O2") = 25
@@ -107,14 +104,10 @@ Select Case lsT
         wsTRNdata.Range("O2") = 186
     Case Is = 206
         wsTRNdata.Range("O2") = 2
-'    Case Is = 229
-'        wsTRNdata.Range("O2") = 2
 End Select
-
 End Sub
 
 Sub transferDrv()
-
 Application.ScreenUpdating = False
 
 j = Range("wo_1oo").End(xlDown).Offset(1, 0).Row
@@ -148,7 +141,6 @@ Set wsTSTdata = ThisWorkbook.Worksheets("tst_data")
         '// transfer output to test data
         Call transposeData(wsGD.Range("S7:S9"), wsTSTdata.Range("O" & i & ":" & "Q" & i))
     Next
-
 End Sub
 
 Sub reseT()
@@ -169,5 +161,4 @@ Set wsTRNdata = ThisWorkbook.Worksheets("trn_data")
     wsTRNdata.Range("O2").Value = 2
 
 Application.ScreenUpdating = True
-
 End Sub
